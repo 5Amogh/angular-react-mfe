@@ -3,6 +3,7 @@ import ReactDOMClient from "react-dom/client";
 import { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.page.jsx';
+import Child from "./pages/Child.page.jsx";
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,10 @@ class App extends React.Component {
             <Routes>
               <Route path="/react" element={<Home />} />
             </Routes>
+
+            <Routes>
+            <Route path="/child" element={<Child />} />
+            </Routes>
           </Suspense>
         </BrowserRouter>
       </>
@@ -36,7 +41,7 @@ class Mfe4Element extends HTMLElement {
     const reactRootElement = document.getElementsByTagName("react-root")[0];
     reactRootElement.id = "react-root-element";
     const container = document.getElementById("react-root-element");
-
+console.log('react is rendering')
     // Create a root.
     const root = ReactDOMClient.createRoot(container);
 
